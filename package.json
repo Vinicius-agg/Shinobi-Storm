@@ -1,0 +1,15 @@
+{
+  "name": "shinobi-storm-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Jogo de luta 2D em Canvas, com roster de shinobi, jutsus, CPU e duelo local.",
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "check": "node --check src/main.js && node --check src/engine/game.js && node --check src/engine/renderer.js && node --check src/engine/fighter.js && node --check src/engine/input.js && node --check src/data/characters.js && node --check src/data/stages.js && node --check scripts/dev-server.mjs && node --check tests/sanity.test.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

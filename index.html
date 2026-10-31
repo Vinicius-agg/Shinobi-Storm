@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="description" content="Shinobi Storm — um protótipo de jogo de luta 2D inspirado no universo shinobi, feito para estudo e portfólio." />
+  <title>Shinobi Storm — Arena Shinobi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Shinobi Storm, início">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="brand-wordmark">SHINOBI<span>STORM</span></span>
+    </a>
+    <nav class="header-nav" aria-label="Navegação principal">
+      <a href="#arena">Arena</a>
+      <a href="#roster">Personagens</a>
+      <a href="#controls">Controles</a>
+    </nav>
+    <span class="build-tag"><i></i> PROTÓTIPO JOGÁVEL</span>
+  </header>
+
+  <main id="top" class="page-shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> O CAMINHO NINJA COMEÇA AQUI</p>
+        <h1 id="hero-title">LUTE PELO<br /><span>SEU LEGADO.</span></h1>
+        <p class="hero-description">Monte seu time, domine técnicas especiais e enfrente a arena. Um jogo de luta 2D com chakra, dash, combos e disputas locais.</p>
+        <div class="hero-meta">
+          <span><b>12</b> shinobi</span><span class="meta-separator"></span><span><b>4</b> arenas</span><span class="meta-separator"></span><span><b>1–2</b> jogadores</span>
+        </div>
+      </div>
+      <div class="hero-emblem" aria-hidden="true">
+        <div class="emblem-ring ring-outer"></div><div class="emblem-ring ring-middle"></div>
+        <div class="emblem-core"><span class="emblem-kanji">忍</span><span class="emblem-label">SHINOBI<br />SPIRIT</span></div>
+        <span class="emblem-spark spark-a"></span><span class="emblem-spark spark-b"></span><span class="emblem-spark spark-c"></span>
+      </div>
+    </section>
+
+    <section id="arena" class="arena-layout" aria-label="Jogo e configurações">
+      <div class="arena-column">
+        <section class="panel battle-panel" aria-labelledby="arena-title">
+          <div class="panel-heading battle-heading">
+            <div><p class="section-kicker">01 / COMBATE</p><h2 id="arena-title">ARENA DE BATALHA</h2></div>
+            <div class="live-status"><span class="status-dot"></span><span id="game-status" aria-live="polite">PRONTO PARA LUTAR</span></div>
+          </div>
+          <div class="canvas-frame">
+            <canvas id="game-canvas" width="960" height="540" aria-label="Arena de luta Shinobi Storm. Use os controles indicados para jogar." tabindex="0">
+              Seu navegador não suporta Canvas. Atualize o navegador para jogar.
+            </canvas>
+            <div class="canvas-corner corner-tl" aria-hidden="true"></div><div class="canvas-corner corner-br" aria-hidden="true"></div>
+          </div>
+          <div class="battle-toolbar">
+            <button id="start-button" class="button button-primary"><span class="button-symbol">▶</span> INICIAR COMBATE</button>
+            <button id="reset-button" class="button button-secondary"><span class="button-symbol">↻</span> REINICIAR</button>
+            <p id="announcement" class="announcement" role="status">Escolha seus shinobi e entre na arena.</p>
+          </div>
+        </section>
+
+        <section id="controls" class="panel controls-panel" aria-labelledby="controls-title">
+          <div class="panel-heading compact-heading"><div><p class="section-kicker">02 / DOMINE A ARENA</p><h2 id="controls-title">CONTROLES DE COMBATE</h2></div><span class="keyboard-badge">TECLADO</span></div>
+          <div class="control-groups">
+            <div class="control-player"><div class="player-label"><span class="player-chip p1-chip">P1</span><strong>JOGADOR 1</strong><span class="player-subtitle">Lado esquerdo</span></div><div class="key-list"><span><kbd>A</kbd><kbd>D</kbd><small>Mover</small></span><span><kbd>W</kbd><small>Pular</small></span><span><kbd>F</kbd><small>Ataque</small></span><span><kbd>G</kbd><small>Jutsu</small></span><span><kbd>H</kbd><small>Dash</small></span></div></div>
+            <div class="control-divider"></div>
+            <div class="control-player"><div class="player-label"><span class="player-chip p2-chip">P2</span><strong>JOGADOR 2</strong><span class="player-subtitle">Lado direito</span></div><div class="key-list"><span><kbd>←</kbd><kbd>→</kbd><small>Mover</small></span><span><kbd>↑</kbd><small>Pular</small></span><span><kbd>J</kbd><small>Ataque</small></span><span><kbd>K</kbd><small>Jutsu</small></span><span><kbd>L</kbd><small>Dash</small></span></div></div>
+          </div>
+          <div class="tip-line"><span class="tip-icon">✦</span><p><strong>Dica ninja:</strong> técnicas consomem chakra. Ataques básicos ajudam a recuperar energia — combine pressão e esquiva para vencer.</p></div>
+        </section>
+      </div>
+
+      <aside class="panel setup-panel" aria-labelledby="setup-title">
+        <div class="panel-heading compact-heading"><div><p class="section-kicker">03 / PREPARE-SE</p><h2 id="setup-title">CONFIGURE A LUTA</h2></div><span class="setup-index">VS.</span></div>
+        <div class="setup-fields">
+          <label class="field-label" for="mode-select">MODO DE JOGO</label>
+          <select id="mode-select" class="select-control"><option value="cpu">Solo — contra CPU</option><option value="local">Duelo local — 2 jogadores</option></select>
+          <label class="field-label" for="stage-select">ARENA</label>
+          <select id="stage-select" class="select-control">
+            <option value="leaf">Vila da Folha — Entardecer</option><option value="valley">Vale do Fim</option><option value="forest">Floresta de Treinamento</option><option value="sand">Deserto Oculto</option>
+          </select>
+        </div>
+        <div class="pick-target-label"><span class="field-label">ESCOLHA UM PERSONAGEM PARA</span><span id="selection-target-label" class="target-pill">JOGADOR 1</span></div>
+        <div class="target-toggle" role="group" aria-label="Escolher jogador para seleção">
+          <button class="target-button is-active" type="button" data-target="p1" aria-pressed="true">P1 <span id="p1-target-name">Naruto</span></button>
+          <button class="target-button" type="button" data-target="p2" aria-pressed="false">P2 <span id="p2-target-name">Sasuke</span></button>
+        </div>
+        <div id="selected-preview" class="selected-preview" aria-live="polite">
+          <div id="preview-portrait" class="preview-portrait"><span class="portrait-glyph">忍</span></div>
+          <div class="preview-copy"><p id="preview-village" class="preview-village">VILA DA FOLHA</p><h3 id="preview-name">Naruto Uzumaki</h3><p id="preview-technique" class="preview-technique">Rasengan</p></div>
+        </div>
+        <div class="stat-list" aria-label="Atributos do personagem selecionado">
+          <div class="stat-row"><span>Velocidade</span><div class="stat-track"><i id="stat-speed"></i></div><b id="stat-speed-value">82</b></div>
+          <div class="stat-row"><span>Impacto</span><div class="stat-track"><i id="stat-power"></i></div><b id="stat-power-value">78</b></div>
+          <div class="stat-row"><span>Chakra</span><div class="stat-track"><i id="stat-chakra"></i></div><b id="stat-chakra-value">86</b></div>
+        </div>
+        <div class="roster-heading" id="roster"><div><p class="section-kicker">SELEÇÃO SHINOBI</p><h3>SEU PRÓXIMO DESAFIO</h3></div><span id="roster-count">12 LUTADORES</span></div>
+        <div id="roster-grid" class="roster-grid" role="group" aria-label="Personagens disponíveis"></div>
+        <p class="roster-hint"><span>↳</span> Clique em um retrato para definir o lutador do jogador selecionado acima.</p>
+      </aside>
+    </section>
+
+    <section class="feature-strip" aria-label="Recursos do jogo">
+      <article class="feature-item"><span class="feature-number">01</span><div class="feature-icon chakra-icon" aria-hidden="true">✳</div><div><h3>CHAKRA & JUTSUS</h3><p>Gerencie energia para virar o combate com técnicas especiais.</p></div></article>
+      <article class="feature-item"><span class="feature-number">02</span><div class="feature-icon dash-icon" aria-hidden="true">➜</div><div><h3>COMBATE ÁGIL</h3><p>Movimentação, salto, dash e janelas de ataque para dominar o ritmo.</p></div></article>
+      <article class="feature-item"><span class="feature-number">03</span><div class="feature-icon versus-icon" aria-hidden="true">VS</div><div><h3>DISPUTA COMPETITIVA</h3><p>Melhor de três rounds, CPU adaptativa e modo local para dois jogadores.</p></div></article>
+    </section>
+
+    <footer class="site-footer"><a class="footer-brand" href="#top">SHINOBI<span>STORM</span></a><p>Projeto de estudo independente para portfólio. Fan game não oficial; sem afiliação com os detentores de Naruto.</p><a href="#top" class="back-top">VOLTAR AO TOPO ↑</a></footer>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
